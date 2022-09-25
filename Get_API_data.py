@@ -48,3 +48,10 @@ class pdtoblob():
 # initialization
 pdtoblob(df).writeToBlob()
 
+
+# COMMAND ----------
+
+# design considerations:
+# individual requests vs looped requests?lamda function maybe?
+# write everything to the same container vs multiple containers?
+
