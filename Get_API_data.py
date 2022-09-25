@@ -48,6 +48,3 @@ class pdtoblob():
 # initialization
 pdtoblob(df).writeToBlob()
 
-# COMMAND ----------
-
-pip install azure-storage-blob
