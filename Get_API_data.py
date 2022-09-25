@@ -7,8 +7,9 @@ import azure.storage.blob
 
 secret_siteCode = dbutils.secrets.get(scope = "azurekeyvault", key = "siteCode")
 secret_apiID = dbutils.secrets.get(scope = "azurekeyvault", key = "apiID")
-secret_apiPassword =dbutils.secrets.get(scope = "azurekeyvault", key = "apiPassword")
-secret_rawconnectionstring =dbutils.secrets.get(scope = "azurekeyvault", key = "rawzone-connectionstring")
+secret_apiPassword = dbutils.secrets.get(scope = "azurekeyvault", key = "apiPassword")
+secret_rawconnectionstring = dbutils.secrets.get(scope = "azurekeyvault", key = "rawzone-connectionstring")
+secret_baseurl = dbutils.secrets.get(scope = "azurekeyvault", key = "API-baseurl") 
 
 # COMMAND ----------
 
@@ -18,7 +19,7 @@ endpoints =["GetCustomersRaw","GetContactsRaw","GetTasksRaw","GetEmployeesRaw","
 # COMMAND ----------
 
 # API call API and header setup
-URL = f'https://app2.timelog.com/inspari/service.asmx'
+URL = f'{secret_baseurl}/{endpoints}'
 DATA = {'key': 'value'}
 
 # The actual call
